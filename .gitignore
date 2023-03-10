@@ -130,3 +130,6 @@ dmypy.json
 
 # Ignore bot creds lol
 bot_token.txt
+
+# Ignore registered user file lol
+registered_usernames.txt
