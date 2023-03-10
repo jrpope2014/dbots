@@ -35,12 +35,30 @@ class SwoleBot:
         auth_header = {'Authorization': f'Bot {token}'}
         return auth_header
     
+    def get_guild_channels(self, guild_id):
+        """
+        Returns
+        -------
+        list : [{guild_dict}]
+        
+        Notes
+        -----
+        * https://discord.com/developers/docs/resources/guild#get-guild-channels
+        """
+        
+        resp = self.session.get(self.url + f"/guilds/{guild_id}/channels")
+        resp.raise_for_status()
+        return resp.json()
+        
+    
     def send_message(self, message):
         """
+        Sends a message to Discord
+
         Params
         ------
         message : str
-            A message to send to the 
+            A message to send to the Discord channel
         """
         pass
 
